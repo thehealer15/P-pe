@@ -52,7 +52,7 @@ Add it in your root build.gradle at the end of repositories:
 ```
 Add following dependency to your project
 ```
-dependencies {
+	dependencies {
 	        implementation 'com.github.thehealer15:p-pe:1.0'
 	}
 ```
