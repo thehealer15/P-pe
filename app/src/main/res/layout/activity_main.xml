@@ -6,14 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/cards_payment_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/amount_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:ems="10"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            android:text="10" />
+
+        <EditText
+            android:id="@+id/src_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:ems="10"
+            android:hint="source"
+            android:inputType="textPersonName"
+            android:padding="5sp"
+            android:text="USA"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/target_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:ems="10"
+            android:hint="target"
+            android:inputType="textPersonName"
+            android:padding="5sp"
+            android:text="IND"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/cards_payment_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:padding="5sp"
+            android:text="Button"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:padding="30sp"
+            android:text="So, as per purchasing power parity 10 USD = 230 RS not 800 Yes, item with cost 10 USD in USA should cost 230 Rs in INDIA. We are enabeling vendors to have dynamic Pricing model"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

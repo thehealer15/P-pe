@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.ppe.pppgateway.R;
+import com.ppe.pppgateway.SMS_Twilio;
 
 public class E_WalletsBottomSheet extends BottomSheetDialogFragment {
     View parent;
@@ -28,12 +29,14 @@ public class E_WalletsBottomSheet extends BottomSheetDialogFragment {
         phonePay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SMS_Twilio.sendMessage("TRANSACTIONS VIA E-WALLETS ARE UNDER CONSTRUCTION, SO TX FAILED");
                 openApp(getContext() , "com.phonepe.app");
             }
         });
         payTm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SMS_Twilio.sendMessage("TRANSACTIONS VIA E-WALLETS ARE UNDER CONSTRUCTION, SO TX FAILED");
                 openApp(getContext(), "net.one97.paytm");
             }
         });

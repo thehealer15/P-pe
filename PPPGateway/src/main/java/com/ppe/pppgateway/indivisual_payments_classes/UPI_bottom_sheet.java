@@ -14,9 +14,28 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.ppe.pppgateway.ParityData;
 import com.ppe.pppgateway.R;
+import com.ppe.pppgateway.SMS_Twilio;
 
 import java.util.concurrent.atomic.AtomicReference;
+import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public class UPI_bottom_sheet extends BottomSheetDialogFragment {
     View parent;
@@ -58,16 +77,20 @@ public class UPI_bottom_sheet extends BottomSheetDialogFragment {
         builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
             Toast.makeText(getActivity(), "Payment Success", Toast.LENGTH_SHORT).show();
             response.set(true);
+            SMS_Twilio.sendMessage(SMS_Twilio.SUCCESS_MESSAGE);
             dialog.cancel();
         });
 
         builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
             Toast.makeText(getActivity(), "Payment Failed", Toast.LENGTH_SHORT).show();
             response.set(false);
+            SMS_Twilio.sendMessage(SMS_Twilio.FAILURE_MESSAGE);
             dialog.cancel();
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
         return response;
     }
+
+
 }

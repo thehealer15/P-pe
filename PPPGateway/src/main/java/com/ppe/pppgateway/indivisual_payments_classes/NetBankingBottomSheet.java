@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.ppe.pppgateway.R;
+import com.ppe.pppgateway.SMS_Twilio;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -59,12 +60,14 @@ public class NetBankingBottomSheet extends BottomSheetDialogFragment {
         builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
             Toast.makeText(getActivity(), "Payment Success", Toast.LENGTH_SHORT).show();
             response.set(true);
+            SMS_Twilio.sendMessage(SMS_Twilio.SUCCESS_MESSAGE);
             dialog.cancel();
         });
 
         builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
             Toast.makeText(getActivity(), "Payment Failed", Toast.LENGTH_SHORT).show();
             response.set(false);
+            SMS_Twilio.sendMessage(SMS_Twilio.FAILURE_MESSAGE);
             dialog.cancel();
         });
         AlertDialog alertDialog = builder.create();

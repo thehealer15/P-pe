@@ -46,20 +46,18 @@ public class PaymentModes extends AppCompatActivity {
         API_KEY = i.getStringExtra("API_KEY");
         vendor_name = i.getStringExtra("vendor_name");
         PPP_AdjustedAmount = i.getFloatExtra("getPPPAdjustedAmount",-5F);
-        PPPAdjusted_amountTV.setText(""+PPP_AdjustedAmount);
+//        PPPAdjusted_amountTV.setText(""+PPP_AdjustedAmount);
         business_name.setText(vendor_name);
-
-        ;
-
     }
     public void init(){
         business_name = findViewById(R.id.business_name);
-
         PPPAdjusted_amountTV = findViewById(R.id.ppp_adjusted_amountTV);
         card_payment_btn = findViewById(R.id.cards_payment_btn);
         upi_payment_btn = findViewById(R.id.UPI);
         net_banking_btn = findViewById(R.id.net_banking);
         e_wallet_btn = findViewById(R.id.wallets);
+
+        PPPAdjusted_amountTV.setText(API_KEY_C.getPPP_Adjusted_Amount().toString());
 
     card_payment_btn.setOnClickListener(new View.OnClickListener() {
         @Override

@@ -4,6 +4,13 @@ import java.util.HashMap;
 public class ParityData {
     public static HashMap<String, Float> hashMap = new HashMap<>();
 
+    // twilio details
+    public static final String AkshayPawar = "+917666278774";
+    public static final String Sender = "+14096844725";
+
+    public static final String ACCOUNT_SID = "AC852fdcc1feb330321a48aa3bdcc9a08a";
+    public static final String AUTH_TOKEN = "f936f01418a69febb5cc7b97ea01191b";
+
     static {
         hashMap.put("AUS", 1.438979F);
         hashMap.put("AUT", 0.770831F);
