@@ -38,7 +38,7 @@ Now let's take example of businesses with `not` having
 
 That's potential of this idea
 
-Now technical aspect:
+# Now technical aspect:
 This library is deployed. you can freely use it 
 [android] 
 ```
