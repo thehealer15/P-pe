@@ -41,7 +41,14 @@ That's potential of this idea
 # Now technical aspect:
 This library is deployed. you can freely use it 
 [android] 
+Steps to integrate SDK to your android application:
+1. get API_KEY from p-pe developer application [link][https://drive.google.com/file/d/13ZdVz2mlelhc3v2XWSXYvnMN-xUI3QIF/view?usp=sharing]
+2. do followings steps to add p-pe to your project.
+
+
 ```
+Take Internet permission from Manifest
+
 Add it in your root build.gradle at the end of repositories:
 	allprojects {
 		repositories {
@@ -56,11 +63,31 @@ Add following dependency to your project
 	        implementation 'com.github.thehealer15:p-pe:1.0'
 	}
 ```
+At your payment activity:
+Create Checkout object. 
+```
+Checkout obj = new Checkout(getApplicationContext() ,15F, "IND" ,"USA" ,"2oiMDOgSyDNLyUtYyZdP9MLpEC72","Gavali Associates");
+obj.openPaymentModes();
+// DONE!
+```
+NOTE : Use 3 letters; abbrivatinos only e.g IND, USA, CAD for canada, 
+
+
+** ALL 	RELEVENT LINKS **
+1. WIX landing page for project : [link][https://akshupatil665.wixsite.com/ppedev]
+2. Youtube video explaining project : [link][https://www.youtube.com/watch?v=M4jvXIYRXRw]
+3. WIX blog explaining project : [link][https://akshupatil665.wixsite.com/ppedev/post/___hi]
+4. p-dev repo : [link][https://github.com/thehealer15/p-pe_dev]
+5. p-pe repo : [link][https://github.com/thehealer15/p-pe#now-technical-aspect]
+6. App to test : [link][https://drive.google.com/file/d/13DjeYZEoKLdP_uDBTrnBZYF8smiXx1h9/view?usp=sharing]
+7. folder with relevent files, do read the `TESTING INSTRUCTIONS` file [link][https://drive.google.com/drive/folders/1QkoTDVPYySdrq1IqU_T6N_fnd0cyswAJ?usp=sharing] 
+
+
 
 What I used:
 1. Android 
 2. Twilio API
 3. Firebase
-
+4. Wix
 
 Created and curated by Akshay Pawar with ❤️ from India. 
